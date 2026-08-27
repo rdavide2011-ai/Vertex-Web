@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 
     <meta charset="UTF-8">
@@ -10,23 +9,48 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <!-- =====================================================
+         SEO
+    ====================================================== -->
+
     <title>
         Vertex Web — Siti Web Professionali
     </title>
 
     <meta
         name="description"
-        content="Vertex Web realizza siti web moderni, professionali, responsive e ottimizzati per aziende, attività e professionisti."
+        content="Vertex Web realizza siti web moderni, professionali, responsive e personalizzati per aziende, attività e professionisti."
     >
 
     <meta
         name="keywords"
-        content="Vertex Web, siti web, web design, realizzazione siti web, Lecco, SEO, siti professionali"
+        content="Vertex Web, siti web, web design, realizzazione siti web, siti professionali, responsive, SEO"
     >
 
     <meta
         name="author"
         content="Davide Riva"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="googlebot"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#050505"
+    >
+
+    <!-- URL principale del sito -->
+    <link
+        rel="canonical"
+        href="https://vertex-web-navy.vercel.app/home"
     >
 
     <!-- FAVICON -->
@@ -41,11 +65,14 @@
         href="logo.png"
     >
 
-    <!-- OPEN GRAPH -->
+
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
 
     <meta
         property="og:title"
-        content="Vertex Web — Il tuo business. La nostra tecnologia."
+        content="Vertex Web — Siti Web Professionali"
     >
 
     <meta
@@ -58,68 +85,118 @@
         content="website"
     >
 
+    <meta
+        property="og:url"
+        content="https://vertex-web-navy.vercel.app/home"
+    >
+
+    <meta
+        property="og:image"
+        content="https://vertex-web-navy.vercel.app/logo.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Logo Vertex Web"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Vertex Web"
+    >
+
+    <meta
+        property="og:locale"
+        content="it_IT"
+    >
+
+
+    <!-- =====================================================
+         TWITTER / X CARD
+    ====================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Vertex Web — Siti Web Professionali"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Creiamo siti web moderni, veloci e professionali per aziende, attività e professionisti."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://vertex-web-navy.vercel.app/logo.png"
+    >
+
+    <meta
+        name="twitter:image:alt"
+        content="Logo Vertex Web"
+    >
+
+
+    <!-- =====================================================
+         DATI STRUTTURATI
+    ====================================================== -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Vertex Web",
+        "url": "https://vertex-web-navy.vercel.app/home",
+        "logo": "https://vertex-web-navy.vercel.app/logo.png",
+        "description": "Vertex Web realizza siti web moderni, professionali, responsive e personalizzati.",
+        "telephone": "+39 351 748 8844",
+        "email": "r.davide2011@gmail.com",
+        "founder": {
+            "@type": "Person",
+            "name": "Davide Riva"
+        }
+    }
+
+    </script>
+
 
     <style>
 
         :root {
+            --black: #050505;
+            --black-soft: #090909;
+            --black-card: #101010;
 
-            --black:
-                #050505;
+            --white: #ffffff;
+            --white-soft: rgba(255,255,255,0.72);
+            --white-muted: rgba(255,255,255,0.48);
 
-            --black-soft:
-                #090909;
+            --border: rgba(255,255,255,0.10);
+            --border-hover: rgba(255,255,255,0.25);
 
-            --black-card:
-                #101010;
-
-            --white:
-                #ffffff;
-
-            --white-soft:
-                rgba(255,255,255,0.72);
-
-            --white-muted:
-                rgba(255,255,255,0.48);
-
-            --border:
-                rgba(255,255,255,0.10);
-
-            --border-hover:
-                rgba(255,255,255,0.25);
-
-            --radius:
-                22px;
-
-            --max-width:
-                1240px;
-
+            --radius: 22px;
+            --max-width: 1240px;
         }
 
 
         * {
-
-            margin:
-                0;
-
-            padding:
-                0;
-
-            box-sizing:
-                border-box;
-
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
 
         html {
-
-            scroll-behavior:
-                smooth;
-
+            scroll-behavior: smooth;
         }
 
 
         body {
-
             font-family:
                 Inter,
                 -apple-system,
@@ -141,45 +218,36 @@
 
             line-height:
                 1.6;
-
         }
 
 
         body.modal-open {
-
             overflow:
                 hidden;
-
         }
 
 
         a {
-
             color:
                 inherit;
 
             text-decoration:
                 none;
-
         }
 
 
         button {
-
             font:
                 inherit;
-
         }
 
 
         ::selection {
-
             background:
                 white;
 
             color:
                 black;
-
         }
 
 
@@ -188,7 +256,6 @@
         ===================================================== */
 
         .background-glow {
-
             position:
                 fixed;
 
@@ -221,12 +288,10 @@
 
             transform:
                 translateX(-50%);
-
         }
 
 
         .noise {
-
             position:
                 fixed;
 
@@ -244,7 +309,6 @@
 
             background-image:
                 url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-
         }
 
 
@@ -253,7 +317,6 @@
         ===================================================== */
 
         .container {
-
             width:
                 min(
                     var(--max-width),
@@ -262,12 +325,10 @@
 
             margin:
                 0 auto;
-
         }
 
 
         section {
-
             position:
                 relative;
 
@@ -276,12 +337,10 @@
 
             scroll-margin-top:
                 110px;
-
         }
 
 
         .eyebrow {
-
             display:
                 inline-flex;
 
@@ -308,12 +367,10 @@
 
             margin-bottom:
                 24px;
-
         }
 
 
         .eyebrow::before {
-
             content:
                 "";
 
@@ -325,12 +382,10 @@
 
             background:
                 rgba(255,255,255,0.45);
-
         }
 
 
         .section-title {
-
             font-size:
                 clamp(
                     42px,
@@ -349,12 +404,10 @@
 
             max-width:
                 850px;
-
         }
 
 
         .section-description {
-
             margin-top:
                 28px;
 
@@ -369,7 +422,6 @@
 
             line-height:
                 1.8;
-
         }
 
 
@@ -378,7 +430,6 @@
         ===================================================== */
 
         header {
-
             position:
                 fixed;
 
@@ -399,12 +450,10 @@
 
             transition:
                 0.35s ease;
-
         }
 
 
         header.scrolled {
-
             background:
                 rgba(5,5,5,0.82);
 
@@ -417,12 +466,10 @@
             border-bottom:
                 1px solid
                 var(--border);
-
         }
 
 
         .navbar {
-
             width:
                 min(
                     1320px,
@@ -448,17 +495,16 @@
                 0 18px;
 
             border:
-                1px solid transparent;
+                1px solid
+                transparent;
 
             transition:
                 0.3s ease;
-
         }
 
 
         header.scrolled
         .navbar {
-
             border-color:
                 var(--border);
 
@@ -467,12 +513,10 @@
 
             background:
                 rgba(255,255,255,0.025);
-
         }
 
 
         .brand {
-
             display:
                 flex;
 
@@ -490,12 +534,10 @@
 
             letter-spacing:
                 -0.03em;
-
         }
 
 
         .brand-logo {
-
             width:
                 42px;
 
@@ -516,12 +558,10 @@
 
             border-radius:
                 50%;
-
         }
 
 
         .nav-links {
-
             display:
                 flex;
 
@@ -533,12 +573,10 @@
 
             list-style:
                 none;
-
         }
 
 
         .nav-links a {
-
             color:
                 var(--white-muted);
 
@@ -550,20 +588,16 @@
 
             transition:
                 0.25s ease;
-
         }
 
 
         .nav-links a:hover {
-
             color:
                 white;
-
         }
 
 
         .nav-cta {
-
             padding:
                 12px 18px !important;
 
@@ -576,23 +610,19 @@
 
             color:
                 white !important;
-
         }
 
 
         .nav-cta:hover {
-
             background:
                 white;
 
             color:
                 black !important;
-
         }
 
 
         .menu-toggle {
-
             display:
                 none;
 
@@ -617,7 +647,6 @@
 
             cursor:
                 pointer;
-
         }
 
 
@@ -626,7 +655,6 @@
         ===================================================== */
 
         .hero {
-
             min-height:
                 100vh;
 
@@ -641,12 +669,10 @@
 
             overflow:
                 hidden;
-
         }
 
 
         .hero-content {
-
             text-align:
                 center;
 
@@ -655,12 +681,10 @@
 
             max-width:
                 1100px;
-
         }
 
 
         .hero-logo {
-
             width:
                 120px;
 
@@ -682,9 +706,11 @@
             border-radius:
                 50%;
 
+            overflow:
+                hidden;
+
             animation:
                 floating 5s ease-in-out infinite;
-
         }
 
 
@@ -692,17 +718,13 @@
 
             0%,
             100% {
-
                 transform:
                     translateY(0);
-
             }
 
             50% {
-
                 transform:
                     translateY(-7px);
-
             }
 
         }
@@ -730,7 +752,6 @@
 
             margin-bottom:
                 25px;
-
         }
 
 
@@ -751,7 +772,6 @@
 
             font-weight:
                 800;
-
         }
 
 
@@ -759,7 +779,6 @@
 
             color:
                 rgba(255,255,255,0.43);
-
         }
 
 
@@ -779,7 +798,6 @@
 
             line-height:
                 1.75;
-
         }
 
 
@@ -802,7 +820,6 @@
 
             flex-wrap:
                 wrap;
-
         }
 
 
@@ -847,7 +864,6 @@
 
             transition:
                 0.3s ease;
-
         }
 
 
@@ -858,7 +874,6 @@
 
             color:
                 black;
-
         }
 
 
@@ -870,7 +885,6 @@
             box-shadow:
                 0 14px 40px
                 rgba(255,255,255,0.12);
-
         }
 
 
@@ -881,7 +895,6 @@
 
             border-color:
                 var(--border-hover);
-
         }
 
 
@@ -892,7 +905,6 @@
 
             transform:
                 translateY(-3px);
-
         }
 
 
@@ -927,15 +939,12 @@
 
             text-transform:
                 uppercase;
-
         }
 
 
         .hero-services span {
-
             position:
                 relative;
-
         }
 
 
@@ -953,7 +962,6 @@
 
             color:
                 rgba(255,255,255,0.2);
-
         }
 
 
@@ -982,7 +990,6 @@
 
             text-transform:
                 uppercase;
-
         }
 
 
@@ -1006,16 +1013,13 @@
 
             margin-bottom:
                 65px;
-
         }
 
 
         .services-header
         .section-description {
-
             margin:
                 0;
-
         }
 
 
@@ -1029,7 +1033,6 @@
 
             gap:
                 14px;
-
         }
 
 
@@ -1075,7 +1078,6 @@
 
             background:
                 #090909;
-
         }
 
 
@@ -1086,7 +1088,6 @@
 
             border-color:
                 rgba(255,255,255,0.30);
-
         }
 
 
@@ -1103,7 +1104,6 @@
 
             overflow:
                 hidden;
-
         }
 
 
@@ -1129,7 +1129,6 @@
             filter:
                 brightness(0.72)
                 saturate(0.90);
-
         }
 
 
@@ -1142,7 +1141,6 @@
             filter:
                 brightness(0.82)
                 saturate(0.95);
-
         }
 
 
@@ -1163,20 +1161,13 @@
             background:
                 linear-gradient(
                     to bottom,
-
                     rgba(0,0,0,0.10) 0%,
-
                     rgba(0,0,0,0.08) 23%,
-
                     rgba(0,0,0,0.18) 42%,
-
                     rgba(0,0,0,0.52) 59%,
-
                     rgba(0,0,0,0.86) 76%,
-
                     rgba(0,0,0,0.99) 100%
                 );
-
         }
 
 
@@ -1201,7 +1192,6 @@
                     transparent 35%,
                     rgba(0,0,0,0.18)
                 );
-
         }
 
 
@@ -1228,7 +1218,6 @@
             text-shadow:
                 0 2px 18px
                 rgba(0,0,0,0.7);
-
         }
 
 
@@ -1245,7 +1234,6 @@
 
             padding-top:
                 180px;
-
         }
 
 
@@ -1273,7 +1261,6 @@
             text-shadow:
                 0 2px 20px
                 rgba(0,0,0,0.45);
-
         }
 
 
@@ -1294,7 +1281,6 @@
             text-shadow:
                 0 2px 18px
                 rgba(0,0,0,0.65);
-
         }
 
 
@@ -1346,7 +1332,6 @@
             transition:
                 gap 0.3s ease,
                 border-color 0.3s ease;
-
         }
 
 
@@ -1363,7 +1348,6 @@
 
             transition:
                 transform 0.3s ease;
-
         }
 
 
@@ -1374,7 +1358,6 @@
 
             border-color:
                 white;
-
         }
 
 
@@ -1382,7 +1365,6 @@
 
             transform:
                 translateX(3px);
-
         }
 
 
@@ -1402,7 +1384,6 @@
             border-bottom:
                 1px solid
                 var(--border);
-
         }
 
 
@@ -1419,7 +1400,6 @@
 
             align-items:
                 start;
-
         }
 
 
@@ -1428,7 +1408,6 @@
             border-top:
                 1px solid
                 var(--border);
-
         }
 
 
@@ -1449,7 +1428,6 @@
 
             gap:
                 20px;
-
         }
 
 
@@ -1466,7 +1444,6 @@
 
             letter-spacing:
                 0.1em;
-
         }
 
 
@@ -1480,7 +1457,6 @@
 
             letter-spacing:
                 -0.03em;
-
         }
 
 
@@ -1494,7 +1470,6 @@
 
             line-height:
                 1.7;
-
         }
 
 
@@ -1509,7 +1484,6 @@
             border-left:
                 1px solid
                 rgba(255,255,255,0.6);
-
         }
 
 
@@ -1523,7 +1497,6 @@
 
             letter-spacing:
                 -0.025em;
-
         }
 
 
@@ -1535,7 +1508,6 @@
 
             margin-bottom:
                 60px;
-
         }
 
 
@@ -1549,7 +1521,6 @@
 
             gap:
                 18px;
-
         }
 
 
@@ -1570,7 +1541,6 @@
 
             transition:
                 0.4s ease;
-
         }
 
 
@@ -1578,7 +1548,6 @@
 
             grid-column:
                 span 2;
-
         }
 
 
@@ -1589,7 +1558,6 @@
 
             transform:
                 translateY(-5px);
-
         }
 
 
@@ -1606,7 +1574,6 @@
 
             background:
                 #151515;
-
         }
 
 
@@ -1615,7 +1582,6 @@
 
             height:
                 470px;
-
         }
 
 
@@ -1638,7 +1604,6 @@
 
             pointer-events:
                 none;
-
         }
 
 
@@ -1668,7 +1633,6 @@
             transition:
                 transform 0.7s
                 cubic-bezier(.2,.7,.2,1);
-
         }
 
 
@@ -1677,7 +1641,6 @@
 
             transform:
                 scale(1.025);
-
         }
 
 
@@ -1698,7 +1661,6 @@
 
             pointer-events:
                 none;
-
         }
 
 
@@ -1718,7 +1680,6 @@
 
             gap:
                 25px;
-
         }
 
 
@@ -1741,7 +1702,6 @@
 
             margin-bottom:
                 9px;
-
         }
 
 
@@ -1752,7 +1712,6 @@
 
             letter-spacing:
                 -0.045em;
-
         }
 
 
@@ -1769,7 +1728,6 @@
 
             margin-top:
                 8px;
-
         }
 
 
@@ -1799,7 +1757,6 @@
 
             transition:
                 0.3s ease;
-
         }
 
 
@@ -1810,7 +1767,6 @@
 
             color:
                 black;
-
         }
 
 
@@ -1830,7 +1786,6 @@
             border-bottom:
                 1px solid
                 var(--border);
-
         }
 
 
@@ -1852,7 +1807,6 @@
             border-left:
                 1px solid
                 var(--border);
-
         }
 
 
@@ -1874,7 +1828,6 @@
 
             transition:
                 0.35s ease;
-
         }
 
 
@@ -1882,7 +1835,6 @@
 
             background:
                 rgba(255,255,255,0.025);
-
         }
 
 
@@ -1899,7 +1851,6 @@
 
             font-weight:
                 700;
-
         }
 
 
@@ -1913,7 +1864,6 @@
 
             margin:
                 70px 0 12px;
-
         }
 
 
@@ -1927,12 +1877,11 @@
 
             line-height:
                 1.7;
-
         }
 
 
         /* =====================================================
-           PAYMENT
+           PAGAMENTO
         ===================================================== */
 
         .payment-box {
@@ -1968,7 +1917,6 @@
                     rgba(255,255,255,0.035),
                     transparent
                 );
-
         }
 
 
@@ -1979,7 +1927,6 @@
 
             letter-spacing:
                 -0.03em;
-
         }
 
 
@@ -1993,7 +1940,6 @@
 
             margin-top:
                 6px;
-
         }
 
 
@@ -2007,7 +1953,6 @@
 
             flex-wrap:
                 wrap;
-
         }
 
 
@@ -2028,7 +1973,6 @@
 
             font-weight:
                 700;
-
         }
 
 
@@ -2046,7 +1990,6 @@
 
             overflow:
                 hidden;
-
         }
 
 
@@ -2079,7 +2022,6 @@
 
             transform:
                 translate(-50%,-50%);
-
         }
 
 
@@ -2112,7 +2054,6 @@
 
             transform:
                 translate(-50%,-50%);
-
         }
 
 
@@ -2123,7 +2064,6 @@
 
             z-index:
                 2;
-
         }
 
 
@@ -2131,7 +2071,6 @@
 
             margin:
                 auto;
-
         }
 
 
@@ -2148,7 +2087,6 @@
 
             font-size:
                 16px;
-
         }
 
 
@@ -2168,7 +2106,6 @@
 
             flex-wrap:
                 wrap;
-
         }
 
 
@@ -2194,7 +2131,6 @@
 
             font-size:
                 13px;
-
         }
 
 
@@ -2209,12 +2145,10 @@
                 var(--border);
 
             padding:
-                55px 0
-                30px;
+                55px 0 30px;
 
             background:
                 #030303;
-
         }
 
 
@@ -2231,7 +2165,6 @@
 
             padding-bottom:
                 60px;
-
         }
 
 
@@ -2251,7 +2184,6 @@
 
             line-height:
                 1.7;
-
         }
 
 
@@ -2271,7 +2203,6 @@
 
             margin-bottom:
                 20px;
-
         }
 
 
@@ -2292,7 +2223,6 @@
 
             transition:
                 0.2s ease;
-
         }
 
 
@@ -2300,7 +2230,6 @@
 
             color:
                 white;
-
         }
 
 
@@ -2330,7 +2259,6 @@
 
             font-size:
                 11px;
-
         }
 
 
@@ -2341,7 +2269,6 @@
 
             gap:
                 20px;
-
         }
 
 
@@ -2393,7 +2320,6 @@
             transition:
                 opacity 0.3s ease,
                 visibility 0.3s ease;
-
         }
 
 
@@ -2407,7 +2333,6 @@
 
             pointer-events:
                 auto;
-
         }
 
 
@@ -2451,7 +2376,6 @@
 
             transition:
                 transform 0.35s ease;
-
         }
 
 
@@ -2461,7 +2385,6 @@
             transform:
                 translateY(0)
                 scale(1);
-
         }
 
 
@@ -2481,7 +2404,6 @@
 
             margin-bottom:
                 35px;
-
         }
 
 
@@ -2499,7 +2421,6 @@
 
             letter-spacing:
                 -0.05em;
-
         }
 
 
@@ -2535,7 +2456,6 @@
 
             transition:
                 0.25s ease;
-
         }
 
 
@@ -2546,7 +2466,6 @@
 
             color:
                 black;
-
         }
 
 
@@ -2560,7 +2479,6 @@
 
             line-height:
                 1.8;
-
         }
 
 
@@ -2574,7 +2492,6 @@
 
             margin:
                 30px 0 10px;
-
         }
 
 
@@ -2582,7 +2499,6 @@
 
             margin-top:
                 0;
-
         }
 
 
@@ -2590,7 +2506,6 @@
 
             margin-bottom:
                 14px;
-
         }
 
 
@@ -2617,7 +2532,6 @@
 
             font-size:
                 13px;
-
         }
 
 
@@ -2636,7 +2550,6 @@
             transition:
                 opacity 0.8s ease,
                 transform 0.8s ease;
-
         }
 
 
@@ -2647,7 +2560,6 @@
 
             transform:
                 translateY(0);
-
         }
 
 
@@ -2661,7 +2573,6 @@
 
                 grid-template-columns:
                     repeat(2,1fr);
-
             }
 
 
@@ -2669,7 +2580,6 @@
 
                 min-height:
                     500px;
-
             }
 
         }
@@ -2727,7 +2637,6 @@
 
                 transition:
                     0.3s ease;
-
             }
 
 
@@ -2741,7 +2650,6 @@
 
                 visibility:
                     visible;
-
             }
 
 
@@ -2752,7 +2660,6 @@
 
                 padding:
                     14px;
-
             }
 
 
@@ -2763,7 +2670,6 @@
 
                 margin-top:
                     8px;
-
             }
 
 
@@ -2771,7 +2677,6 @@
 
                 display:
                     block;
-
             }
 
 
@@ -2779,7 +2684,6 @@
 
                 grid-template-columns:
                     repeat(2,1fr);
-
             }
 
 
@@ -2790,7 +2694,6 @@
 
                 gap:
                     60px;
-
             }
 
 
@@ -2798,7 +2701,6 @@
 
                 grid-template-columns:
                     1fr 1fr;
-
             }
 
         }
@@ -2814,7 +2716,6 @@
 
                 padding:
                     90px 0;
-
             }
 
 
@@ -2825,7 +2726,6 @@
                         var(--max-width),
                         calc(100% - 32px)
                     );
-
             }
 
 
@@ -2833,7 +2733,6 @@
 
                 min-height:
                     100svh;
-
             }
 
 
@@ -2847,7 +2746,6 @@
 
                 margin-bottom:
                     24px;
-
             }
 
 
@@ -2859,7 +2757,6 @@
                         16vw,
                         85px
                     );
-
             }
 
 
@@ -2867,7 +2764,6 @@
 
                 font-size:
                     15px;
-
             }
 
 
@@ -2878,7 +2774,6 @@
 
                 margin-top:
                     50px;
-
             }
 
 
@@ -2887,7 +2782,6 @@
 
                 display:
                     none;
-
             }
 
 
@@ -2895,7 +2789,6 @@
 
                 display:
                     block;
-
             }
 
 
@@ -2903,7 +2796,6 @@
 
                 grid-template-columns:
                     1fr;
-
             }
 
 
@@ -2916,7 +2808,6 @@
                     26px
                     24px
                     24px;
-
             }
 
 
@@ -2924,7 +2815,6 @@
 
                 padding-top:
                     160px;
-
             }
 
 
@@ -2932,7 +2822,6 @@
 
                 font-size:
                     28px;
-
             }
 
 
@@ -2940,7 +2829,6 @@
 
                 grid-template-columns:
                     1fr;
-
             }
 
 
@@ -2948,7 +2836,6 @@
 
                 grid-column:
                     span 1;
-
             }
 
 
@@ -2958,7 +2845,6 @@
 
                 height:
                     270px;
-
             }
 
 
@@ -2966,7 +2852,6 @@
 
                 align-items:
                     flex-start;
-
             }
 
 
@@ -2974,7 +2859,6 @@
 
                 font-size:
                     23px;
-
             }
 
 
@@ -2982,7 +2866,6 @@
 
                 grid-template-columns:
                     1fr;
-
             }
 
 
@@ -2990,7 +2873,6 @@
 
                 min-height:
                     230px;
-
             }
 
 
@@ -2998,7 +2880,6 @@
 
                 margin-top:
                     45px;
-
             }
 
 
@@ -3006,7 +2887,6 @@
 
                 display:
                     block;
-
             }
 
 
@@ -3014,7 +2894,6 @@
 
                 margin-top:
                     25px;
-
             }
 
 
@@ -3022,7 +2901,6 @@
 
                 padding:
                     110px 0;
-
             }
 
 
@@ -3033,7 +2911,6 @@
 
                 gap:
                     35px;
-
             }
 
 
@@ -3044,7 +2921,6 @@
 
                 align-items:
                     flex-start;
-
             }
 
 
@@ -3052,7 +2928,6 @@
 
                 flex-wrap:
                     wrap;
-
             }
 
 
@@ -3060,7 +2935,6 @@
 
                 padding:
                     12px;
-
             }
 
 
@@ -3074,7 +2948,6 @@
 
                 border-radius:
                     20px;
-
             }
 
 
@@ -3082,7 +2955,6 @@
 
                 font-size:
                     38px;
-
             }
 
         }
@@ -3105,7 +2977,6 @@
 
                 transition-duration:
                     0.01ms !important;
-
             }
 
         }
@@ -3208,7 +3079,6 @@
                 ☰
             </button>
 
-
         </nav>
 
     </header>
@@ -3286,7 +3156,6 @@
                         WhatsApp
                     </a>
 
-
                 </div>
 
 
@@ -3335,6 +3204,7 @@
                     class="services-header reveal"
                 >
 
+
                     <div>
 
                         <div class="eyebrow">
@@ -3361,13 +3231,16 @@
 
                     </p>
 
+
                 </div>
 
 
                 <div class="services-grid">
 
 
-                    <article class="service-card reveal">
+                    <article
+                        class="service-card reveal"
+                    >
 
                         <div class="service-image">
 
@@ -3380,7 +3253,9 @@
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             01
                         </span>
 
@@ -3419,7 +3294,9 @@
                     </article>
 
 
-                    <article class="service-card reveal">
+                    <article
+                        class="service-card reveal"
+                    >
 
                         <div class="service-image">
 
@@ -3432,7 +3309,9 @@
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             02
                         </span>
 
@@ -3472,7 +3351,9 @@
                     </article>
 
 
-                    <article class="service-card reveal">
+                    <article
+                        class="service-card reveal"
+                    >
 
                         <div class="service-image">
 
@@ -3485,7 +3366,9 @@
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             03
                         </span>
 
@@ -3524,7 +3407,9 @@
                     </article>
 
 
-                    <article class="service-card reveal">
+                    <article
+                        class="service-card reveal"
+                    >
 
                         <div class="service-image">
 
@@ -3537,7 +3422,9 @@
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             04
                         </span>
 
@@ -3601,6 +3488,7 @@
 
                     <div class="reveal">
 
+
                         <div class="eyebrow">
                             Perché Vertex Web
                         </div>
@@ -3626,6 +3514,7 @@
 
                         </div>
 
+
                     </div>
 
 
@@ -3639,7 +3528,6 @@
                             <div class="why-number">
                                 01
                             </div>
-
 
                             <div>
 
@@ -3667,7 +3555,6 @@
                                 02
                             </div>
 
-
                             <div>
 
                                 <h3>
@@ -3694,7 +3581,6 @@
                                 03
                             </div>
 
-
                             <div>
 
                                 <h3>
@@ -3706,8 +3592,7 @@
 
                                     Il sito viene progettato
                                     per funzionare bene
-                                    su PC, tablet
-                                    e smartphone.
+                                    su PC, tablet e smartphone.
 
                                 </p>
 
@@ -3756,9 +3641,7 @@
              PORTFOLIO
         ================================================== -->
 
-        <section
-            id="progetti"
-        >
+        <section id="progetti">
 
             <div class="container">
 
@@ -3777,12 +3660,15 @@
                     </h2>
 
 
-                    <p class="section-description">
+                    <p
+                        class="section-description"
+                    >
 
                         Alcuni dei progetti realizzati
                         da Vertex Web.
 
                     </p>
+
 
                 </div>
 
@@ -3813,6 +3699,7 @@
 
 
                         <div class="project-info">
+
 
                             <div>
 
@@ -3846,12 +3733,13 @@
                                 ↗
                             </a>
 
+
                         </div>
 
                     </article>
 
 
-                    <!-- B&G PRODUCTS -->
+                    <!-- B&G -->
 
                     <article
                         class="project-card reveal"
@@ -3875,6 +3763,7 @@
 
 
                         <div class="project-info">
+
 
                             <div>
 
@@ -3908,6 +3797,7 @@
                                 ↗
                             </a>
 
+
                         </div>
 
                     </article>
@@ -3936,6 +3826,7 @@
 
 
                         <div class="project-info">
+
 
                             <div>
 
@@ -3969,6 +3860,7 @@
                             >
                                 ↗
                             </a>
+
 
                         </div>
 
@@ -4009,7 +3901,9 @@
                     </h2>
 
 
-                    <p class="section-description">
+                    <p
+                        class="section-description"
+                    >
 
                         Dal primo contatto alla
                         pubblicazione del sito,
@@ -4017,6 +3911,7 @@
                         passo dopo passo.
 
                     </p>
+
 
                 </div>
 
@@ -4149,7 +4044,9 @@
                     </div>
 
 
-                    <div class="payment-methods">
+                    <div
+                        class="payment-methods"
+                    >
 
                         <span class="payment-method">
                             Bonifico istantaneo
@@ -4183,7 +4080,6 @@
                 class="container contact-content reveal"
             >
 
-
                 <div class="eyebrow">
                     Inizia il tuo progetto
                 </div>
@@ -4197,7 +4093,9 @@
                 </h2>
 
 
-                <p class="contact-description">
+                <p
+                    class="contact-description"
+                >
 
                     Raccontaci cosa hai in mente
                     e scopriamo insieme come
@@ -4216,7 +4114,9 @@
                         rel="noopener noreferrer"
                         class="button button-primary"
                     >
+
                         Scrivici su WhatsApp →
+
                     </a>
 
 
@@ -4224,7 +4124,9 @@
                         href="mailto:r.davide2011@gmail.com?subject=Richiesta%20preventivo%20Vertex%20Web"
                         class="button button-secondary"
                     >
+
                         Invia una email →
+
                     </a>
 
 
@@ -4232,6 +4134,7 @@
 
 
                 <div class="contact-details">
+
 
                     <span>
                         WhatsApp:
@@ -4244,7 +4147,9 @@
                         r.davide2011@gmail.com
                     </span>
 
+
                 </div>
+
 
             </div>
 
@@ -4267,6 +4172,7 @@
 
 
                 <div class="footer-brand">
+
 
                     <a
                         href="/home"
@@ -4293,6 +4199,7 @@
                         crescere la tua presenza online.
 
                     </p>
+
 
                 </div>
 
@@ -4407,10 +4314,11 @@
                         Cookie Policy
                     </a>
 
-
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -4512,11 +4420,10 @@
 
                 <p>
 
-                    Il trattamento dei dati comunicati
-                    volontariamente dall'utente avviene
-                    per rispondere alla sua richiesta
-                    e, quando applicabile, per adottare
-                    misure precontrattuali richieste
+                    Il trattamento avviene per rispondere
+                    alle richieste dell'utente e, quando
+                    applicabile, per adottare misure
+                    precontrattuali richieste
                     dall'interessato.
 
                 </p>
@@ -4560,8 +4467,8 @@
                     I dati non vengono venduti.
                     Possono essere trattati da fornitori
                     tecnici utilizzati per consentire
-                    l'erogazione dei servizi, quando ciò
-                    sia necessario.
+                    l'erogazione dei servizi, quando
+                    necessario.
 
                 </p>
 
@@ -4588,6 +4495,7 @@
                 <p>
 
                     Per richieste relative alla privacy:
+
                     <strong>
                         r.davide2011@gmail.com
                     </strong>
@@ -4597,13 +4505,13 @@
 
                 <div class="legal-note">
 
-                    Questa informativa è stata impostata
-                    sulla struttura attuale del sito.
-                    Eventuali nuovi strumenti come
+                    Questa informativa è basata sulla
+                    configurazione attuale del sito.
+                    L'eventuale introduzione futura di
                     newsletter, analytics, pubblicità,
-                    moduli, sistemi di prenotazione o
-                    altri servizi di terze parti richiederanno
-                    un aggiornamento dell'informativa.
+                    moduli, prenotazioni o altri servizi
+                    di terze parti richiederà una revisione
+                    dell'informativa.
 
                 </div>
 
@@ -4672,34 +4580,24 @@
 
                 <p>
 
-                    Il sito è stato configurato senza
+                    Il sito non utilizza attualmente
                     un sistema proprietario di analytics,
                     pubblicità o profilazione.
 
                 </p>
 
-                <p>
-
-                    Le funzionalità principali del sito
-                    non richiedono la creazione di un
-                    account né un sistema interno di
-                    profilazione dell'utente.
-
-                </p>
-
 
                 <h3>
-                    3. Contenuti e servizi di terze parti
+                    3. Contenuti di terze parti
                 </h3>
 
                 <p>
 
-                    Alcune risorse presenti nel sito,
-                    come immagini o contenuti incorporati,
+                    Alcune risorse del sito, comprese
+                    immagini o contenuti incorporati,
                     possono provenire da servizi esterni.
-                    Tali servizi possono avere proprie
-                    tecnologie, cookie o strumenti di
-                    tracciamento.
+                    Tali servizi possono avere tecnologie
+                    e policy proprie.
 
                 </p>
 
@@ -4710,8 +4608,8 @@
 
                 <p>
 
-                    L'utente può gestire o eliminare i
-                    cookie attraverso le impostazioni
+                    L'utente può gestire o eliminare
+                    i cookie attraverso le impostazioni
                     del proprio browser.
 
                 </p>
@@ -4725,21 +4623,19 @@
 
                     Questa Cookie Policy potrà essere
                     aggiornata quando verranno introdotti
-                    nuovi strumenti, servizi o tecnologie
-                    di tracciamento nel sito.
+                    nuovi strumenti o servizi nel sito.
 
                 </p>
 
 
                 <div class="legal-note">
 
-                    Nota: se in futuro Vertex Web aggiungerà
-                    Google Analytics, Meta Pixel, sistemi
-                    pubblicitari, mappe, video o altri
-                    strumenti non tecnici, questa informativa
-                    dovrà essere aggiornata e potrebbe essere
-                    necessario implementare un sistema di
-                    consenso.
+                    Se in futuro verranno aggiunti
+                    analytics, pixel pubblicitari,
+                    strumenti di profilazione o altri
+                    servizi che richiedono consenso,
+                    la Cookie Policy dovrà essere
+                    aggiornata di conseguenza.
 
                 </div>
 
@@ -4755,7 +4651,6 @@
     ===================================================== -->
 
     <script>
-
 
         /* =================================================
            NAVBAR
@@ -4813,17 +4708,27 @@
                     "open"
                 );
 
+
                 document.body.classList.toggle(
                     "menu-open"
                 );
 
 
-                menuToggle.innerHTML =
+                if (
                     navLinks.classList.contains(
                         "open"
                     )
-                    ? "✕"
-                    : "☰";
+                ) {
+
+                    menuToggle.innerHTML =
+                        "✕";
+
+                } else {
+
+                    menuToggle.innerHTML =
+                        "☰";
+
+                }
 
             }
         );
@@ -4844,9 +4749,11 @@
                                 "open"
                             );
 
+
                             document.body.classList.remove(
                                 "menu-open"
                             );
+
 
                             menuToggle.innerHTML =
                                 "☰";
@@ -4883,6 +4790,7 @@
                                 entry.target.classList.add(
                                     "visible"
                                 );
+
 
                                 observer.unobserve(
                                     entry.target
@@ -5011,6 +4919,10 @@
         }
 
 
+        /* =================================================
+           PRIVACY
+        ================================================= */
+
         document
             .querySelectorAll(
                 '[data-legal="privacy"]'
@@ -5024,7 +4936,7 @@
 
                             event.preventDefault();
 
-                            window.history.pushState(
+                            history.pushState(
                                 {},
                                 "",
                                 "/privacy"
@@ -5041,6 +4953,10 @@
             );
 
 
+        /* =================================================
+           COOKIE
+        ================================================= */
+
         document
             .querySelectorAll(
                 '[data-legal="cookie"]'
@@ -5054,7 +4970,7 @@
 
                             event.preventDefault();
 
-                            window.history.pushState(
+                            history.pushState(
                                 {},
                                 "",
                                 "/cookie"
@@ -5071,6 +4987,10 @@
             );
 
 
+        /* =================================================
+           CHIUSURA
+        ================================================= */
+
         document
             .querySelectorAll(
                 "[data-close-legal]"
@@ -5082,7 +5002,7 @@
                         "click",
                         () => {
 
-                            window.history.pushState(
+                            history.pushState(
                                 {},
                                 "",
                                 "/home"
@@ -5112,7 +5032,7 @@
                                 event.target === modal
                             ) {
 
-                                window.history.pushState(
+                                history.pushState(
                                     {},
                                     "",
                                     "/home"
@@ -5162,6 +5082,7 @@
                 );
 
                 return;
+
             }
 
 
@@ -5181,6 +5102,7 @@
                 );
 
                 return;
+
             }
 
 
@@ -5260,7 +5182,7 @@
 
 
         /* =================================================
-           ROUTE INITIAL
+           CARICAMENTO
         ================================================= */
 
         if (
@@ -5303,7 +5225,7 @@
                     "Escape"
                 ) {
 
-                    window.history.pushState(
+                    history.pushState(
                         {},
                         "",
                         "/home"
@@ -5317,7 +5239,6 @@
         );
 
     </script>
-
 
 </body>
 </html>

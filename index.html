@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vertex Web — Siti Web Professionali</title>
+    <meta name="description" content="Vertex Web realizza siti web moderni, professionali, responsive e ottimizzati per aziende, attività e professionisti.">
+    <meta name="keywords" content="Vertex Web, siti web, web design, realizzazione siti web, Lecco, SEO, siti professionali">
+    <meta name="author" content="Vertex Web">
+
+    <meta property="og:title" content="Vertex Web — Il tuo business. La nostra tecnologia.">
+    <meta property="og:description" content="Creiamo siti web moderni, veloci e professionali per aziende, attività e professionisti.">
+    <meta property="og:type" content="website">
+
+    <style>
+        :root {
+            --black: #050505;
+            --black-soft: #0b0b0b;
+            --black-card: #101010;
+            --white: #ffffff;
+            --white-soft: rgba(255,255,255,0.72);
+            --white-muted: rgba(255,255,255,0.48);
+            --border: rgba(255,255,255,0.10);
+            --border-hover: rgba(255,255,255,0.25);
+            --radius: 22px;
+            --max-width: 1240px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        ::selection {
+            background: #fff;
+            color: #000;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        .background-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.025);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: -2;
+            top: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.025;
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        .container {
+            width: min(var(--max-width), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        section {
+            position: relative;
+            padding: 130px 0;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            margin-bottom: 24px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: rgba(255,255,255,0.45);
+        }
+
+        .section-title {
+            font-size: clamp(42px, 6vw, 82px);
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            font-weight: 750;
+            max-width: 850px;
+        }
+
+        .section-description {
+            margin-top: 28px;
+            max-width: 620px;
+            color: var(--white-soft);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding: 18px 0;
+            transition: 0.35s ease;
+        }
+
+        header.scrolled {
+            background: rgba(5,5,5,0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            width: min(1320px, calc(100% - 32px));
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            padding: 0 18px;
+            border: 1px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        header.scrolled .navbar {
+            border-color: var(--border);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.025);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-size: 18px;
+            font-weight: 750;
+            letter-spacing: -0.03em;
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 50%;
+        }
+
+        .brand-logo svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white-muted);
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-cta {
+            padding: 12px 18px !important;
+            border: 1px solid rgba(255,255,255,0.8);
+            border-radius: 100px;
+            color: white !important;
+        }
+
+        .nav-cta:hover {
+            background: white;
+            color: black !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 130px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            margin: auto;
+            max-width: 1100px;
+        }
+
+        .hero-logo {
+            width: 92px;
+            height: 92px;
+            border: 1px solid rgba(255,255,255,0.65);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 34px;
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        .hero-logo svg {
+            width: 52px;
+            height: 52px;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        .hero-kicker {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(58px, 9vw, 128px);
+            line-height: 0.88;
+            letter-spacing: -0.075em;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: rgba(255,255,255,0.43);
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: 34px auto 0;
+            font-size: 18px;
+            color: var(--white-soft);
+            line-height: 1.75;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 52px;
+            padding: 0 23px;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.75);
+            font-size: 12px;
+            font-weight: 750;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
+
+        .button-primary {
+            background: white;
+            color: black;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(255,255,255,0.12);
+        }
+
+        .button-secondary {
+            color: white;
+            border-color: var(--border-hover);
+        }
+
+        .button-secondary:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-3px);
+        }
+
+        .hero-services {
+            margin-top: 72px;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            color: var(--white-muted);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .hero-services span {
+            position: relative;
+        }
+
+        .hero-services span:not(:last-child)::after {
+            content: "•";
+            position: absolute;
+            right: -18px;
+            color: rgba(255,255,255,0.2);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white-muted);
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            align-items: flex-end;
+            margin-bottom: 65px;
+        }
+
+        .services-header .section-description {
+            margin: 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .service-card {
+            min-height: 350px;
+            padding: 30px;
+            background: linear-gradient(145deg, #111, #090909);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.45s cubic-bezier(.2,.7,.2,1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.035);
+            filter: blur(40px);
+            top: -90px;
+            right: -90px;
+            transition: 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-hover);
+        }
+
+        .service-card:hover::before {
+            transform: scale(1.5);
+        }
+
+        .service-number {
+            color: var(--white-muted);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+
+        .service-card h3 {
+            font-size: 26px;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--white-muted);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        /* =========================
+           WHY US
+        ========================= */
+
+        .why-section {
+            background: #080808;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .why-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .why-list {
+            border-top: 1px solid var(--border);
+        }
+
+        .why-item {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 20px;
+        }
+
+        .why-number {
+            color: var(--white-muted);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .why-item h3 {
+            font-size: 20px;
+            margin-bottom: 7px;
+            letter-spacing: -0.03em;
+        }
+
+        .why-item p {
+            color: var(--white-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .quote-box {
+            margin-top: 60px;
+            padding: 28px;
+            border-left: 1px solid rgba(255,255,255,0.6);
+        }
+
+        .quote-box p {
+            font-size: 21px;
+            line-height: 1.45;
+            letter-spacing: -0.025em;
+        }
+
+        /* =========================
+           PORTFOLIO
+        ========================= */
+
+        .portfolio-header {
+            margin-bottom: 60px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: #0b0b0b;
+            transition: 0.4s ease;
+        }
+
+        .project-card:first-child {
+            grid-column: span 2;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+        }
+
+        .project-preview {
+            height: 360px;
+            position: relative;
+            overflow: hidden;
+            background: #151515;
+        }
+
+        .project-card:first-child .project-preview {
+            height: 470px;
+        }
+
+        .project-preview iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            pointer-events: none;
+            transform: scale(1);
+        }
+
+        .preview-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.55));
+            pointer-events: none;
+        }
+
+        .project-info {
+            padding: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 25px;
+        }
+
+        .project-info small {
+            display: block;
+            color: var(--white-muted);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 9px;
+        }
+
+        .project-info h3 {
+            font-size: 27px;
+            letter-spacing: -0.045em;
+        }
+
+        .project-info p {
+            color: var(--white-muted);
+            font-size: 13px;
+            max-width: 550px;
+            margin-top: 8px;
+        }
+
+        .project-link {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--border-hover);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            transition: 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: white;
+            color: black;
+        }
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .process {
+            background: #080808;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 65px;
+            border-top: 1px solid var(--border);
+            border-left: 1px solid var(--border);
+        }
+
+        .process-card {
+            padding: 35px 30px;
+            min-height: 290px;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            transition: 0.35s ease;
+        }
+
+        .process-card:hover {
+            background: rgba(255,255,255,0.025);
+        }
+
+        .process-card span {
+            font-size: 11px;
+            color: var(--white-muted);
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+
+        .process-card h3 {
+            font-size: 24px;
+            letter-spacing: -0.04em;
+            margin: 70px 0 12px;
+        }
+
+        .process-card p {
+            color: var(--white-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PAYMENT
+        ========================= */
+
+        .payment-box {
+            margin-top: 65px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.035), transparent);
+        }
+
+        .payment-box h3 {
+            font-size: 22px;
+            letter-spacing: -0.03em;
+        }
+
+        .payment-box p {
+            color: var(--white-muted);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .payment-method {
+            padding: 11px 16px;
+            border: 1px solid var(--border-hover);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            padding: 160px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.05);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .contact::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.035);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact .section-title {
+            margin: auto;
+        }
+
+        .contact-description {
+            max-width: 600px;
+            margin: 30px auto 0;
+            color: var(--white-soft);
+            font-size: 16px;
+        }
+
+        .contact-buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-details {
+            margin-top: 45px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            color: var(--white-muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 55px 0 30px;
+            background: #030303;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: var(--white-muted);
+            max-width: 330px;
+            margin-top: 18px;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--white-muted);
+            margin-bottom: 20px;
+        }
+
+        .footer-column a,
+        .footer-column span {
+            display: block;
+            color: rgba(255,255,255,0.75);
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            color: var(--white-muted);
+            font-size: 11px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* =========================
+           REVEAL ANIMATIONS
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                position: fixed;
+                top: 92px;
+                left: 16px;
+                right: 16px;
+                background: rgba(10,10,10,0.97);
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--border);
+                border-radius: 22px;
+                padding: 25px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 5px;
+                transform: translateY(-20px);
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.3s ease;
+            }
+
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px;
+            }
+
+            .nav-cta {
+                text-align: center;
+                margin-top: 8px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .services-grid,
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-layout {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            section {
+                padding: 90px 0;
+            }
+
+            .container {
+                width: min(var(--max-width), calc(100% - 32px));
+            }
+
+            .hero {
+                min-height: 100svh;
+            }
+
+            .hero h1 {
+                font-size: clamp(54px, 16vw, 85px);
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-services {
+                gap: 17px;
+                margin-top: 50px;
+            }
+
+            .hero-services span:not(:last-child)::after {
+                display: none;
+            }
+
+            .services-header {
+                display: block;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                min-height: 270px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card:first-child {
+                grid-column: span 1;
+            }
+
+            .project-preview,
+            .project-card:first-child .project-preview {
+                height: 270px;
+            }
+
+            .project-info {
+                align-items: flex-start;
+            }
+
+            .project-info h3 {
+                font-size: 23px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-card {
+                min-height: 230px;
+            }
+
+            .process-card h3 {
+                margin-top: 45px;
+            }
+
+            .payment-box {
+                display: block;
+            }
+
+            .payment-methods {
+                margin-top: 25px;
+            }
+
+            .contact {
+                padding: 110px 0;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-legal {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+    <div class="noise"></div>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header id="header">
+        <nav class="navbar">
+
+            <a href="#home" class="brand">
+                <span class="brand-logo">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 34L30 25L42 34L50 20L58 34L70 25L82 34L76 67H24L18 34Z"
+                              stroke="white"
+                              stroke-width="6"
+                              stroke-linejoin="round"/>
+                        <path d="M22 67H78"
+                              stroke="white"
+                              stroke-width="6"
+                              stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span>Vertex Web</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#progetti">Progetti</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+                <li>
+                    <a href="#contatti" class="nav-cta">Richiedi un preventivo →</a>
+                </li>
+            </ul>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
+                ☰
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container hero-content reveal">
+
+                <div class="hero-logo">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 34L30 25L42 34L50 20L58 34L70 25L82 34L76 67H24L18 34Z"
+                              stroke="white"
+                              stroke-width="5"
+                              stroke-linejoin="round"/>
+                        <path d="M22 67H78"
+                              stroke="white"
+                              stroke-width="5"
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <div class="hero-kicker">
+                    Vertex Web
+                </div>
+
+                <h1>
+                    Il tuo business.<br>
+                    <span>La nostra tecnologia.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Creiamo siti web moderni, veloci e professionali
+                    per aziende, attività e professionisti.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contatti" class="button button-primary">
+                        Richiedi un preventivo →
+                    </a>
+
+                    <a
+                        href="https://wa.me/393517488844?text=Ciao%20Vertex%20Web%2C%20vorrei%20richiedere%20informazioni%20per%20un%20sito%20web."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-secondary">
+                        WhatsApp
+                    </a>
+                </div>
+
+                <div class="hero-services">
+                    <span>Web Design</span>
+                    <span>Sviluppo</span>
+                    <span>Responsive</span>
+                    <span>SEO</span>
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                Scroll ↓
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVIZI
+        ========================= -->
+
+        <section id="servizi">
+
+            <div class="container">
+
+                <div class="services-header reveal">
+
+                    <div>
+                        <div class="eyebrow">I nostri servizi</div>
+
+                        <h2 class="section-title">
+                            Tutto ciò che serve
+                            alla tua presenza online.
+                        </h2>
+                    </div>
+
+                    <p class="section-description">
+                        Diamo forma alla tua presenza digitale attraverso
+                        soluzioni moderne, funzionali e progettate per il tuo
+                        business.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+                    <article class="service-card reveal">
+                        <span class="service-number">01</span>
+
+                        <div>
+                            <h3>Siti Web</h3>
+                            <p>
+                                Siti moderni e professionali progettati per
+                                rappresentare al meglio la tua attività.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="service-card reveal">
+                        <span class="service-number">02</span>
+
+                        <div>
+                            <h3>Web Design</h3>
+                            <p>
+                                Interfacce curate, eleganti e pensate per
+                                offrire un'esperienza semplice e intuitiva.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="service-card reveal">
+                        <span class="service-number">03</span>
+
+                        <div>
+                            <h3>Responsive</h3>
+                            <p>
+                                Il tuo sito sarà ottimizzato per smartphone,
+                                tablet e computer.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="service-card reveal">
+                        <span class="service-number">04</span>
+
+                        <div>
+                            <h3>SEO</h3>
+                            <p>
+                                Ottimizzazione tecnica e strutturale per
+                                aiutare il sito a essere trovato sui motori
+                                di ricerca.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PERCHÉ VERTEX WEB
+        ========================= -->
+
+        <section class="why-section" id="perche">
+
+            <div class="container">
+
+                <div class="why-layout">
+
+                    <div class="reveal">
+
+                        <div class="eyebrow">
+                            Perché Vertex Web
+                        </div>
+
+                        <h2 class="section-title">
+                            Non creiamo solo siti.
+                            Creiamo presenze online.
+                        </h2>
+
+                        <div class="quote-box">
+                            <p>
+                                La tua attività merita di essere
+                                presentata nel modo giusto.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="why-list reveal">
+
+                        <div class="why-item">
+                            <div class="why-number">01</div>
+                            <div>
+                                <h3>Design su misura</h3>
+                                <p>
+                                    Ogni progetto viene pensato in base
+                                    all'attività e ai suoi obiettivi.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="why-item">
+                            <div class="why-number">02</div>
+                            <div>
+                                <h3>Qualità</h3>
+                                <p>
+                                    Curiamo ogni dettaglio, dalla grafica
+                                    alla struttura del sito.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="why-item">
+                            <div class="why-number">03</div>
+                            <div>
+                                <h3>Ogni dispositivo</h3>
+                                <p>
+                                    Il sito viene progettato per funzionare
+                                    bene su PC, tablet e smartphone.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="why-item">
+                            <div class="why-number">04</div>
+                            <div>
+                                <h3>Contatto diretto</h3>
+                                <p>
+                                    Puoi parlare direttamente con noi
+                                    tramite WhatsApp o email.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PORTFOLIO
+        ========================= -->
+
+        <section id="progetti">
+
+            <div class="container">
+
+                <div class="portfolio-header reveal">
+
+                    <div class="eyebrow">
+                        Portfolio
+                    </div>
+
+                    <h2 class="section-title">
+                        I nostri progetti.
+                    </h2>
+
+                    <p class="section-description">
+                        Alcuni dei progetti realizzati da Vertex Web.
+                    </p>
+
+                </div>
+
+
+                <div class="portfolio-grid">
+
+
+                    <!-- BARBER LC -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-preview">
+
+                            <iframe
+                                src="https://barber-lc.vercel.app/"
+                                title="Barber LC"
+                                loading="lazy">
+                            </iframe>
+
+                            <div class="preview-overlay"></div>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+                                <small>01 — Web Design</small>
+
+                                <h3>Barber LC</h3>
+
+                                <p>
+                                    Sito web moderno e professionale
+                                    realizzato per Barber LC.
+                                </p>
+                            </div>
+
+                            <a
+                                href="https://barber-lc.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                                aria-label="Visita Barber LC">
+                                ↗
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- B&G PRODUCTS -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-preview">
+
+                            <iframe
+                                src="https://www.begproducts.it/"
+                                title="B&G Products"
+                                loading="lazy">
+                            </iframe>
+
+                            <div class="preview-overlay"></div>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+                                <small>02 — Business Website</small>
+
+                                <h3>B&G Products</h3>
+
+                                <p>
+                                    Sito aziendale per presentare
+                                    attività, prodotti e contatti.
+                                </p>
+                            </div>
+
+                            <a
+                                href="https://www.begproducts.it/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                                aria-label="Visita B&G Products">
+                                ↗
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TABACCHERIA -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-preview">
+
+                            <iframe
+                                src="https://tabaccheria-bar-sport-zhou.vercel.app/"
+                                title="Tabaccheria Bar Sport Zhou"
+                                loading="lazy">
+                            </iframe>
+
+                            <div class="preview-overlay"></div>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+                                <small>03 — Business Website</small>
+
+                                <h3>Tabaccheria Bar Sport Zhou</h3>
+
+                                <p>
+                                    Presenza online dedicata all'attività,
+                                    con informazioni e contatti.
+                                </p>
+                            </div>
+
+                            <a
+                                href="https://tabaccheria-bar-sport-zhou.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                                aria-label="Visita Tabaccheria Bar Sport Zhou">
+                                ↗
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COME FUNZIONA
+        ========================= -->
+
+        <section class="process" id="processo">
+
+            <div class="container">
+
+                <div class="reveal">
+
+                    <div class="eyebrow">
+                        Il processo
+                    </div>
+
+                    <h2 class="section-title">
+                        Semplice.<br>
+                        Diretto.
+                    </h2>
+
+                    <p class="section-description">
+                        Dal primo contatto alla pubblicazione del sito,
+                        seguiamo il progetto passo dopo passo.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <article class="process-card reveal">
+                        <span>01</span>
+                        <h3>Ci racconti il tuo progetto</h3>
+                        <p>
+                            Ci contatti tramite WhatsApp o email e ci
+                            spieghi di cosa hai bisogno.
+                        </p>
+                    </article>
+
+
+                    <article class="process-card reveal">
+                        <span>02</span>
+                        <h3>Analizziamo le tue esigenze</h3>
+                        <p>
+                            Definiamo insieme struttura, funzionalità
+                            e stile del sito.
+                        </p>
+                    </article>
+
+
+                    <article class="process-card reveal">
+                        <span>03</span>
+                        <h3>Realizziamo il sito</h3>
+                        <p>
+                            Sviluppiamo il progetto con un design moderno,
+                            responsive e personalizzato.
+                        </p>
+                    </article>
+
+
+                    <article class="process-card reveal">
+                        <span>04</span>
+                        <h3>Consegna</h3>
+                        <p>
+                            Dopo l'approvazione finale, il sito viene
+                            pubblicato e consegnato.
+                        </p>
+                    </article>
+
+                </div>
+
+
+                <!-- PAGAMENTO -->
+
+                <div class="payment-box reveal">
+
+                    <div>
+                        <h3>Pagamenti semplici e sicuri</h3>
+
+                        <p>
+                            Il pagamento del progetto può essere effettuato
+                            tramite uno dei seguenti metodi.
+                        </p>
+                    </div>
+
+                    <div class="payment-methods">
+
+                        <span class="payment-method">
+                            Bonifico istantaneo
+                        </span>
+
+                        <span class="payment-method">
+                            PayPal
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTATTI
+        ========================= -->
+
+        <section class="contact" id="contatti">
+
+            <div class="container contact-content reveal">
+
+                <div class="eyebrow">
+                    Inizia il tuo progetto
+                </div>
+
+                <h2 class="section-title">
+                    Hai un progetto<br>
+                    in mente?
+                </h2>
+
+                <p class="contact-description">
+                    Raccontaci cosa hai in mente e scopriamo insieme
+                    come trasformarlo in un sito web professionale.
+                </p>
+
+
+                <div class="contact-buttons">
+
+                    <a
+                        href="https://wa.me/393517488844?text=Ciao%20Vertex%20Web%2C%20vorrei%20richiedere%20informazioni%20per%20un%20sito%20web."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-primary">
+                        Scrivici su WhatsApp →
+                    </a>
+
+                    <a
+                        href="mailto:r.davide2011@gmail.com?subject=Richiesta%20preventivo%20Vertex%20Web"
+                        class="button button-secondary">
+                        Invia una email →
+                    </a>
+
+                </div>
+
+
+                <div class="contact-details">
+
+                    <span>
+                        WhatsApp: 351 748 8844
+                    </span>
+
+                    <span>
+                        Email: r.davide2011@gmail.com
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-top">
+
+
+                <div class="footer-brand">
+
+                    <a href="#home" class="brand">
+
+                        <span class="brand-logo">
+
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 34L30 25L42 34L50 20L58 34L70 25L82 34L76 67H24L18 34Z"
+                                      stroke="white"
+                                      stroke-width="6"
+                                      stroke-linejoin="round"/>
+                                <path d="M22 67H78"
+                                      stroke="white"
+                                      stroke-width="6"
+                                      stroke-linecap="round"/>
+                            </svg>
+
+                        </span>
+
+                        <span>Vertex Web</span>
+
+                    </a>
+
+                    <p>
+                        Creiamo siti web che fanno crescere
+                        la tua presenza online.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Navigazione</h4>
+
+                    <a href="#home">Home</a>
+                    <a href="#servizi">Servizi</a>
+                    <a href="#progetti">Progetti</a>
+                    <a href="#contatti">Contatti</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Contatti</h4>
+
+                    <a
+                        href="https://wa.me/393517488844"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        WhatsApp
+                    </a>
+
+                    <a href="mailto:r.davide2011@gmail.com">
+                        Email
+                    </a>
+
+                    <span>
+                        351 748 8844
+                    </span>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Pagamento</h4>
+
+                    <span>Bonifico istantaneo</span>
+                    <span>PayPal</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Vertex Web — Tutti i diritti riservati.
+                </span>
+
+                <div class="footer-legal">
+                    <a href="#" onclick="alert('Pagina in preparazione.'); return false;">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" onclick="alert('Pagina in preparazione.'); return false;">
+                        Cookie Policy
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           NAVBAR SCROLL
+        ========================= */
+
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 30) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+        });
+
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("open");
+            document.body.classList.toggle("menu-open");
+
+            if (navLinks.classList.contains("open")) {
+                menuToggle.innerHTML = "✕";
+            } else {
+                menuToggle.innerHTML = "☰";
+            }
+
+        });
+
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("open");
+                document.body.classList.remove("menu-open");
+                menuToggle.innerHTML = "☰";
+
+            });
+
+        });
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver(
+
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* =========================
+           PROJECT CARD DELAY
+        ========================= */
+
+        document.querySelectorAll(".services-grid .reveal").forEach((card, index) => {
+
+            card.style.transitionDelay = `${index * 80}ms`;
+
+        });
+
+
+        document.querySelectorAll(".process-grid .reveal").forEach((card, index) => {
+
+            card.style.transitionDelay = `${index * 80}ms`;
+
+        });
+
+
+        /* =========================
+           CLOSE MENU WITH ESC
+        ========================= */
+
+        document.addEventListener("keydown", (event) => {
+
+            if (event.key === "Escape") {
+
+                navLinks.classList.remove("open");
+                document.body.classList.remove("menu-open");
+                menuToggle.innerHTML = "☰";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

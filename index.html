@@ -18,12 +18,18 @@
 
     <meta name="author" content="Vertex Web">
 
-    <meta property="og:title" content="Vertex Web — Il tuo business. La nostra tecnologia.">
+    <meta
+        property="og:title"
+        content="Vertex Web — Il tuo business. La nostra tecnologia."
+    >
+
     <meta
         property="og:description"
         content="Creiamo siti web moderni, veloci e professionali per aziende, attività e professionisti."
     >
+
     <meta property="og:type" content="website">
+
 
     <style>
 
@@ -41,9 +47,6 @@
 
             --radius: 22px;
             --max-width: 1240px;
-
-            /* LOGO UFFICIALE VERTEX WEB */
-            --vertex-logo: url("data:image/webp;base64,REPLACE_LOGO_DATA");
         }
 
 
@@ -101,9 +104,9 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            BACKGROUND
-        ========================================================= */
+        ===================================================== */
 
         .background-glow {
             position: fixed;
@@ -144,15 +147,16 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            GENERAL
-        ========================================================= */
+        ===================================================== */
 
         .container {
-            width: min(
-                var(--max-width),
-                calc(100% - 48px)
-            );
+            width:
+                min(
+                    var(--max-width),
+                    calc(100% - 48px)
+                );
 
             margin: 0 auto;
         }
@@ -160,6 +164,7 @@
 
         section {
             position: relative;
+
             padding: 130px 0;
         }
 
@@ -191,16 +196,18 @@
             width: 28px;
             height: 1px;
 
-            background: rgba(255,255,255,0.45);
+            background:
+                rgba(255,255,255,0.45);
         }
 
 
         .section-title {
-            font-size: clamp(
-                42px,
-                6vw,
-                82px
-            );
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    82px
+                );
 
             line-height: 0.98;
 
@@ -225,9 +232,9 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            NAVBAR
-        ========================================================= */
+        ===================================================== */
 
         header {
             position: fixed;
@@ -240,25 +247,32 @@
 
             padding: 18px 0;
 
-            transition: 0.35s ease;
+            transition:
+                0.35s ease;
         }
 
 
         header.scrolled {
-            background: rgba(5,5,5,0.82);
+            background:
+                rgba(5,5,5,0.82);
 
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter:
+                blur(20px);
 
-            border-bottom: 1px solid var(--border);
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
 
         .navbar {
-            width: min(
-                1320px,
-                calc(100% - 32px)
-            );
+            width:
+                min(
+                    1320px,
+                    calc(100% - 32px)
+                );
 
             margin: auto;
 
@@ -274,16 +288,19 @@
 
             border: 1px solid transparent;
 
-            transition: 0.3s ease;
+            transition:
+                0.3s ease;
         }
 
 
         header.scrolled .navbar {
-            border-color: var(--border);
+            border-color:
+                var(--border);
 
             border-radius: 18px;
 
-            background: rgba(255,255,255,0.025);
+            background:
+                rgba(255,255,255,0.025);
         }
 
 
@@ -302,19 +319,53 @@
         }
 
 
+        /* =====================================================
+           LOGO FILE
+        ===================================================== */
+
         .brand-logo {
             width: 42px;
             height: 42px;
 
             flex-shrink: 0;
 
-            background-image: var(--vertex-logo);
+            display: block;
 
-            background-size: contain;
+            object-fit: contain;
 
-            background-position: center;
+            border-radius: 50%;
+        }
 
-            background-repeat: no-repeat;
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+
+            margin:
+                0 auto 30px;
+
+            display: block;
+
+            object-fit: contain;
+
+            animation:
+                floating 5s ease-in-out infinite;
+        }
+
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-7px);
+            }
+
         }
 
 
@@ -336,7 +387,8 @@
 
             font-weight: 600;
 
-            transition: 0.25s ease;
+            transition:
+                0.25s ease;
         }
 
 
@@ -346,20 +398,25 @@
 
 
         .nav-cta {
-            padding: 12px 18px !important;
+            padding:
+                12px 18px !important;
 
-            border: 1px solid rgba(255,255,255,0.8);
+            border:
+                1px solid
+                rgba(255,255,255,0.8);
 
             border-radius: 100px;
 
-            color: white !important;
+            color:
+                white !important;
         }
 
 
         .nav-cta:hover {
             background: white;
 
-            color: black !important;
+            color:
+                black !important;
         }
 
 
@@ -369,9 +426,12 @@
             width: 42px;
             height: 42px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
-            background: transparent;
+            background:
+                transparent;
 
             color: white;
 
@@ -381,9 +441,9 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            HERO
-        ========================================================= */
+        ===================================================== */
 
         .hero {
             min-height: 100vh;
@@ -407,38 +467,6 @@
         }
 
 
-        .hero-logo {
-            width: 120px;
-            height: 120px;
-
-            margin: 0 auto 30px;
-
-            background-image: var(--vertex-logo);
-
-            background-size: contain;
-
-            background-position: center;
-
-            background-repeat: no-repeat;
-
-            animation: floating 5s ease-in-out infinite;
-        }
-
-
-        @keyframes floating {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-7px);
-            }
-
-        }
-
-
         .hero-kicker {
             display: inline-block;
 
@@ -450,40 +478,46 @@
 
             text-transform: uppercase;
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             margin-bottom: 25px;
         }
 
 
         .hero h1 {
-            font-size: clamp(
-                58px,
-                9vw,
-                128px
-            );
+            font-size:
+                clamp(
+                    58px,
+                    9vw,
+                    128px
+                );
 
             line-height: 0.88;
 
-            letter-spacing: -0.075em;
+            letter-spacing:
+                -0.075em;
 
             font-weight: 800;
         }
 
 
         .hero h1 span {
-            color: rgba(255,255,255,0.43);
+            color:
+                rgba(255,255,255,0.43);
         }
 
 
         .hero-description {
             max-width: 650px;
 
-            margin: 34px auto 0;
+            margin:
+                34px auto 0;
 
             font-size: 18px;
 
-            color: var(--white-soft);
+            color:
+                var(--white-soft);
 
             line-height: 1.75;
         }
@@ -515,11 +549,14 @@
 
             min-height: 52px;
 
-            padding: 0 23px;
+            padding:
+                0 23px;
 
             border-radius: 100px;
 
-            border: 1px solid rgba(255,255,255,0.75);
+            border:
+                1px solid
+                rgba(255,255,255,0.75);
 
             font-size: 12px;
 
@@ -529,7 +566,8 @@
 
             text-transform: uppercase;
 
-            transition: 0.3s ease;
+            transition:
+                0.3s ease;
         }
 
 
@@ -541,7 +579,8 @@
 
 
         .button-primary:hover {
-            transform: translateY(-3px);
+            transform:
+                translateY(-3px);
 
             box-shadow:
                 0 14px 40px
@@ -552,14 +591,17 @@
         .button-secondary {
             color: white;
 
-            border-color: var(--border-hover);
+            border-color:
+                var(--border-hover);
         }
 
 
         .button-secondary:hover {
-            background: rgba(255,255,255,0.07);
+            background:
+                rgba(255,255,255,0.07);
 
-            transform: translateY(-3px);
+            transform:
+                translateY(-3px);
         }
 
 
@@ -574,7 +616,8 @@
 
             flex-wrap: wrap;
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 11px;
 
@@ -598,7 +641,8 @@
 
             right: -18px;
 
-            color: rgba(255,255,255,0.2);
+            color:
+                rgba(255,255,255,0.2);
         }
 
 
@@ -609,9 +653,11 @@
 
             left: 50%;
 
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 10px;
 
@@ -621,9 +667,9 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            SERVIZI
-        ========================================================= */
+        ===================================================== */
 
         .services-header {
             display: flex;
@@ -638,7 +684,8 @@
         }
 
 
-        .services-header .section-description {
+        .services-header
+        .section-description {
             margin: 0;
         }
 
@@ -646,7 +693,8 @@
         .services-grid {
             display: grid;
 
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns:
+                repeat(4,1fr);
 
             gap: 14px;
         }
@@ -666,7 +714,8 @@
                 1px solid
                 rgba(255,255,255,0.14);
 
-            border-radius: var(--radius);
+            border-radius:
+                var(--radius);
 
             overflow: hidden;
 
@@ -684,12 +733,14 @@
 
                 border-color 0.35s ease;
 
-            background: #090909;
+            background:
+                #090909;
         }
 
 
         .service-card:hover {
-            transform: translateY(-8px);
+            transform:
+                translateY(-8px);
 
             border-color:
                 rgba(255,255,255,0.30);
@@ -729,7 +780,9 @@
 
         .service-card:hover
         .service-image img {
-            transform: scale(1.055);
+
+            transform:
+                scale(1.055);
 
             filter:
                 brightness(0.82)
@@ -790,7 +843,8 @@
 
             font-size: 13px;
 
-            letter-spacing: 0.10em;
+            letter-spacing:
+                0.10em;
 
             font-weight: 700;
 
@@ -825,9 +879,11 @@
 
             line-height: 1;
 
-            letter-spacing: -0.045em;
+            letter-spacing:
+                -0.045em;
 
-            margin-bottom: 16px;
+            margin-bottom:
+                16px;
 
             color: white;
 
@@ -910,29 +966,34 @@
 
 
         .service-link:hover span {
-            transform: translateX(3px);
+            transform:
+                translateX(3px);
         }
 
 
-        /* =========================================================
+        /* =====================================================
            WHY US
-        ========================================================= */
+        ===================================================== */
 
         .why-section {
-            background: #080808;
+            background:
+                #080808;
 
             border-top:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             border-bottom:
-                1px solid var(--border);
+                1px solid
+                var(--border);
         }
 
 
         .why-layout {
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr;
 
             gap: 100px;
 
@@ -942,7 +1003,8 @@
 
         .why-list {
             border-top:
-                1px solid var(--border);
+                1px solid
+                var(--border);
         }
 
 
@@ -950,18 +1012,21 @@
             padding: 28px 0;
 
             border-bottom:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             display: grid;
 
-            grid-template-columns: 50px 1fr;
+            grid-template-columns:
+                50px 1fr;
 
             gap: 20px;
         }
 
 
         .why-number {
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 11px;
 
@@ -981,7 +1046,8 @@
 
 
         .why-item p {
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 14px;
 
@@ -1009,9 +1075,9 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            PORTFOLIO
-        ========================================================= */
+        ===================================================== */
 
         .portfolio-header {
             margin-bottom: 60px;
@@ -1033,18 +1099,22 @@
                 1px solid
                 var(--border);
 
-            border-radius: var(--radius);
+            border-radius:
+                var(--radius);
 
             overflow: hidden;
 
-            background: #0b0b0b;
+            background:
+                #0b0b0b;
 
-            transition: 0.4s ease;
+            transition:
+                0.4s ease;
         }
 
 
         .project-card:first-child {
-            grid-column: span 2;
+            grid-column:
+                span 2;
         }
 
 
@@ -1052,7 +1122,8 @@
             border-color:
                 var(--border-hover);
 
-            transform: translateY(-5px);
+            transform:
+                translateY(-5px);
         }
 
 
@@ -1063,7 +1134,8 @@
 
             overflow: hidden;
 
-            background: #151515;
+            background:
+                #151515;
         }
 
 
@@ -1119,7 +1191,8 @@
         .project-info small {
             display: block;
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 10px;
 
@@ -1134,12 +1207,14 @@
         .project-info h3 {
             font-size: 27px;
 
-            letter-spacing: -0.045em;
+            letter-spacing:
+                -0.045em;
         }
 
 
         .project-info p {
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 13px;
 
@@ -1165,7 +1240,8 @@
 
             place-items: center;
 
-            transition: 0.3s ease;
+            transition:
+                0.3s ease;
         }
 
 
@@ -1176,18 +1252,21 @@
         }
 
 
-        /* =========================================================
-           PROCESS
-        ========================================================= */
+        /* =====================================================
+           PROCESSO
+        ===================================================== */
 
         .process {
-            background: #080808;
+            background:
+                #080808;
 
             border-top:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             border-bottom:
-                1px solid var(--border);
+                1px solid
+                var(--border);
         }
 
 
@@ -1200,25 +1279,31 @@
             margin-top: 65px;
 
             border-top:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             border-left:
-                1px solid var(--border);
+                1px solid
+                var(--border);
         }
 
 
         .process-card {
-            padding: 35px 30px;
+            padding:
+                35px 30px;
 
             min-height: 290px;
 
             border-right:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             border-bottom:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
-            transition: 0.35s ease;
+            transition:
+                0.35s ease;
         }
 
 
@@ -1231,9 +1316,11 @@
         .process-card span {
             font-size: 11px;
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
-            letter-spacing: 0.15em;
+            letter-spacing:
+                0.15em;
 
             font-weight: 700;
         }
@@ -1242,14 +1329,17 @@
         .process-card h3 {
             font-size: 24px;
 
-            letter-spacing: -0.04em;
+            letter-spacing:
+                -0.04em;
 
-            margin: 70px 0 12px;
+            margin:
+                70px 0 12px;
         }
 
 
         .process-card p {
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 14px;
 
@@ -1257,9 +1347,9 @@
         }
 
 
-        /* =========================================================
-           PAYMENT
-        ========================================================= */
+        /* =====================================================
+           PAGAMENTO
+        ===================================================== */
 
         .payment-box {
             margin-top: 65px;
@@ -1268,7 +1358,8 @@
                 1px solid
                 var(--border);
 
-            border-radius: var(--radius);
+            border-radius:
+                var(--radius);
 
             padding: 35px;
 
@@ -1292,12 +1383,14 @@
         .payment-box h3 {
             font-size: 22px;
 
-            letter-spacing: -0.03em;
+            letter-spacing:
+                -0.03em;
         }
 
 
         .payment-box p {
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 13px;
 
@@ -1315,13 +1408,15 @@
 
 
         .payment-method {
-            padding: 11px 16px;
+            padding:
+                11px 16px;
 
             border:
                 1px solid
                 var(--border-hover);
 
-            border-radius: 100px;
+            border-radius:
+                100px;
 
             font-size: 11px;
 
@@ -1329,9 +1424,9 @@
         }
 
 
-        /* =========================================================
-           CONTACT
-        ========================================================= */
+        /* =====================================================
+           CONTATTI
+        ===================================================== */
 
         .contact {
             padding: 160px 0;
@@ -1401,9 +1496,11 @@
         .contact-description {
             max-width: 600px;
 
-            margin: 30px auto 0;
+            margin:
+                30px auto 0;
 
-            color: var(--white-soft);
+            color:
+                var(--white-soft);
 
             font-size: 16px;
         }
@@ -1433,15 +1530,16 @@
 
             flex-wrap: wrap;
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 13px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            FOOTER
-        ========================================================= */
+        ===================================================== */
 
         footer {
             border-top:
@@ -1452,7 +1550,8 @@
                 55px 0
                 30px;
 
-            background: #030303;
+            background:
+                #030303;
         }
 
 
@@ -1469,7 +1568,8 @@
 
 
         .footer-brand p {
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             max-width: 330px;
 
@@ -1488,7 +1588,8 @@
 
             letter-spacing: 0.16em;
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             margin-bottom: 20px;
         }
@@ -1505,7 +1606,8 @@
 
             margin-bottom: 10px;
 
-            transition: 0.2s ease;
+            transition:
+                0.2s ease;
         }
 
 
@@ -1529,7 +1631,8 @@
 
             gap: 20px;
 
-            color: var(--white-muted);
+            color:
+                var(--white-muted);
 
             font-size: 11px;
         }
@@ -1542,14 +1645,15 @@
         }
 
 
-        /* =========================================================
-           REVEAL
-        ========================================================= */
+        /* =====================================================
+           ANIMAZIONI
+        ===================================================== */
 
         .reveal {
             opacity: 0;
 
-            transform: translateY(30px);
+            transform:
+                translateY(30px);
 
             transition:
                 opacity 0.8s ease,
@@ -1560,13 +1664,14 @@
         .reveal.visible {
             opacity: 1;
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
         }
 
 
-        /* =========================================================
+        /* =====================================================
            TABLET
-        ========================================================= */
+        ===================================================== */
 
         @media (max-width: 1050px) {
 
@@ -1586,6 +1691,7 @@
         @media (max-width: 950px) {
 
             .nav-links {
+
                 position: fixed;
 
                 top: 92px;
@@ -1620,17 +1726,20 @@
 
                 visibility: hidden;
 
-                transition: 0.3s ease;
+                transition:
+                    0.3s ease;
             }
 
 
             .nav-links.open {
+
                 transform:
                     translateY(0);
 
                 opacity: 1;
 
                 visibility: visible;
+
             }
 
 
@@ -1654,29 +1763,35 @@
 
 
             .process-grid {
+
                 grid-template-columns:
                     repeat(2,1fr);
+
             }
 
 
             .why-layout {
+
                 grid-template-columns: 1fr;
 
                 gap: 60px;
+
             }
 
 
             .footer-top {
+
                 grid-template-columns:
                     1fr 1fr;
+
             }
 
         }
 
 
-        /* =========================================================
+        /* =====================================================
            MOBILE
-        ========================================================= */
+        ===================================================== */
 
         @media (max-width: 700px) {
 
@@ -1695,25 +1810,31 @@
 
 
             .hero {
-                min-height: 100svh;
+                min-height:
+                    100svh;
             }
 
 
             .hero-logo {
+
                 width: 100px;
                 height: 100px;
 
-                margin-bottom: 24px;
+                margin-bottom:
+                    24px;
+
             }
 
 
             .hero h1 {
+
                 font-size:
                     clamp(
                         54px,
                         16vw,
                         85px
                     );
+
             }
 
 
@@ -1723,9 +1844,11 @@
 
 
             .hero-services {
+
                 gap: 17px;
 
                 margin-top: 50px;
+
             }
 
 
@@ -1741,69 +1864,89 @@
 
 
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
 
             .service-card {
+
                 min-height: 510px;
 
                 padding:
                     26px
                     24px
                     24px;
+
             }
 
 
             .service-content {
-                padding-top: 160px;
+                padding-top:
+                    160px;
             }
 
 
             .service-card h3 {
-                font-size: 28px;
+                font-size:
+                    28px;
             }
 
 
             .portfolio-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
 
             .project-card:first-child {
-                grid-column: span 1;
+                grid-column:
+                    span 1;
             }
 
 
             .project-preview,
             .project-card:first-child
             .project-preview {
+
                 height: 270px;
+
             }
 
 
             .project-info {
-                align-items: flex-start;
+                align-items:
+                    flex-start;
             }
 
 
             .project-info h3 {
-                font-size: 23px;
+                font-size:
+                    23px;
             }
 
 
             .process-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
+
             }
 
 
             .process-card {
-                min-height: 230px;
+
+                min-height:
+                    230px;
+
             }
 
 
             .process-card h3 {
-                margin-top: 45px;
+
+                margin-top:
+                    45px;
+
             }
 
 
@@ -1813,26 +1956,36 @@
 
 
             .payment-methods {
-                margin-top: 25px;
+                margin-top:
+                    25px;
             }
 
 
             .contact {
-                padding: 110px 0;
+                padding:
+                    110px 0;
             }
 
 
             .footer-top {
-                grid-template-columns: 1fr;
 
-                gap: 35px;
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    35px;
+
             }
 
 
             .footer-bottom {
-                flex-direction: column;
 
-                align-items: flex-start;
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
             }
 
 
@@ -1843,9 +1996,9 @@
         }
 
 
-        /* =========================================================
-           REDUCED MOTION
-        ========================================================= */
+        /* =====================================================
+           ACCESSIBILITÀ
+        ===================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -1853,7 +2006,8 @@
             *::before,
             *::after {
 
-                scroll-behavior: auto !important;
+                scroll-behavior:
+                    auto !important;
 
                 animation-duration:
                     0.01ms !important;
@@ -1873,14 +2027,15 @@
 
 <body>
 
+
     <div class="background-glow"></div>
 
     <div class="noise"></div>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          NAVBAR
-    ========================================================= -->
+    ===================================================== -->
 
     <header id="header">
 
@@ -1890,10 +2045,14 @@
             <a
                 href="#home"
                 class="brand"
-                aria-label="Vertex Web Home"
+                aria-label="Vertex Web"
             >
 
-                <span class="brand-logo"></span>
+                <img
+                    src="logo.png"
+                    alt="Vertex Web"
+                    class="brand-logo"
+                >
 
                 <span>
                     Vertex Web
@@ -1932,12 +2091,14 @@
                 </li>
 
                 <li>
+
                     <a
                         href="#contatti"
                         class="nav-cta"
                     >
                         Richiedi un preventivo →
                     </a>
+
                 </li>
 
             </ul>
@@ -1956,16 +2117,12 @@
     </header>
 
 
-    <!-- =========================================================
-         MAIN
-    ========================================================= -->
-
     <main>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              HERO
-        ===================================================== -->
+        ================================================== -->
 
         <section
             class="hero"
@@ -1976,7 +2133,12 @@
                 class="container hero-content reveal"
             >
 
-                <div class="hero-logo"></div>
+
+                <img
+                    src="logo.png"
+                    alt="Logo Vertex Web"
+                    class="hero-logo"
+                >
 
 
                 <div class="hero-kicker">
@@ -1985,11 +2147,13 @@
 
 
                 <h1>
+
                     Il tuo business.<br>
 
                     <span>
                         La nostra tecnologia.
                     </span>
+
                 </h1>
 
 
@@ -2010,7 +2174,9 @@
                         href="#contatti"
                         class="button button-primary"
                     >
+
                         Richiedi un preventivo →
+
                     </a>
 
 
@@ -2020,8 +2186,11 @@
                         rel="noopener noreferrer"
                         class="button button-secondary"
                     >
+
                         WhatsApp
+
                     </a>
+
 
                 </div>
 
@@ -2046,6 +2215,7 @@
 
                 </div>
 
+
             </div>
 
 
@@ -2056,11 +2226,13 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              SERVIZI
-        ===================================================== -->
+        ================================================== -->
 
-        <section id="servizi">
+        <section
+            id="servizi"
+        >
 
             <div class="container">
 
@@ -2068,6 +2240,7 @@
                 <div
                     class="services-header reveal"
                 >
+
 
                     <div>
 
@@ -2095,15 +2268,16 @@
 
                     </p>
 
+
                 </div>
 
 
                 <div class="services-grid">
 
 
-                    <!-- =========================================
-                         SERVIZIO 01
-                    ========================================== -->
+                    <!-- ================================
+                         SITI WEB
+                    ================================= -->
 
                     <article
                         class="service-card reveal"
@@ -2113,19 +2287,23 @@
 
                             <img
                                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
-                                alt="Realizzazione di siti web professionali"
+                                alt="Realizzazione di siti web"
                                 loading="lazy"
                             >
 
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             01
                         </span>
 
 
-                        <div class="service-content">
+                        <div
+                            class="service-content"
+                        >
 
                             <h3>
                                 Siti Web
@@ -2159,9 +2337,9 @@
                     </article>
 
 
-                    <!-- =========================================
-                         SERVIZIO 02
-                    ========================================== -->
+                    <!-- ================================
+                         WEB DESIGN
+                    ================================= -->
 
                     <article
                         class="service-card reveal"
@@ -2171,19 +2349,23 @@
 
                             <img
                                 src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85"
-                                alt="Web design e progettazione grafica"
+                                alt="Web design"
                                 loading="lazy"
                             >
 
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             02
                         </span>
 
 
-                        <div class="service-content">
+                        <div
+                            class="service-content"
+                        >
 
                             <h3>
                                 Web Design
@@ -2218,9 +2400,9 @@
                     </article>
 
 
-                    <!-- =========================================
-                         SERVIZIO 03
-                    ========================================== -->
+                    <!-- ================================
+                         RESPONSIVE
+                    ================================= -->
 
                     <article
                         class="service-card reveal"
@@ -2230,19 +2412,23 @@
 
                             <img
                                 src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=85"
-                                alt="Sito web visualizzato su diversi dispositivi"
+                                alt="Sito web su diversi dispositivi"
                                 loading="lazy"
                             >
 
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             03
                         </span>
 
 
-                        <div class="service-content">
+                        <div
+                            class="service-content"
+                        >
 
                             <h3>
                                 Responsive
@@ -2251,8 +2437,9 @@
 
                             <p>
 
-                                Il tuo sito sarà ottimizzato
-                                per smartphone, tablet
+                                Il tuo sito sarà
+                                ottimizzato per
+                                smartphone, tablet
                                 e computer.
 
                             </p>
@@ -2276,9 +2463,9 @@
                     </article>
 
 
-                    <!-- =========================================
-                         SERVIZIO 04
-                    ========================================== -->
+                    <!-- ================================
+                         SEO
+                    ================================= -->
 
                     <article
                         class="service-card reveal"
@@ -2288,19 +2475,23 @@
 
                             <img
                                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85"
-                                alt="Analisi SEO e dati digitali"
+                                alt="SEO e analisi dati"
                                 loading="lazy"
                             >
 
                         </div>
 
 
-                        <span class="service-number">
+                        <span
+                            class="service-number"
+                        >
                             04
                         </span>
 
 
-                        <div class="service-content">
+                        <div
+                            class="service-content"
+                        >
 
                             <h3>
                                 SEO
@@ -2342,9 +2533,9 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              PERCHÉ VERTEX WEB
-        ===================================================== -->
+        ================================================== -->
 
         <section
             class="why-section"
@@ -2358,6 +2549,7 @@
 
 
                     <div class="reveal">
+
 
                         <div class="eyebrow">
                             Perché Vertex Web
@@ -2384,10 +2576,13 @@
 
                         </div>
 
+
                     </div>
 
 
-                    <div class="why-list reveal">
+                    <div
+                        class="why-list reveal"
+                    >
 
 
                         <div class="why-item">
@@ -2404,9 +2599,10 @@
 
                                 <p>
 
-                                    Ogni progetto viene pensato
-                                    in base all'attività
-                                    e ai suoi obiettivi.
+                                    Ogni progetto viene
+                                    pensato in base
+                                    all'attività e ai
+                                    suoi obiettivi.
 
                                 </p>
 
@@ -2455,8 +2651,8 @@
                                 <p>
 
                                     Il sito viene progettato
-                                    per funzionare bene su PC,
-                                    tablet e smartphone.
+                                    per funzionare bene su
+                                    PC, tablet e smartphone.
 
                                 </p>
 
@@ -2499,16 +2695,20 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              PORTFOLIO
-        ===================================================== -->
+        ================================================== -->
 
-        <section id="progetti">
+        <section
+            id="progetti"
+        >
 
             <div class="container">
 
 
-                <div class="portfolio-header reveal">
+                <div
+                    class="portfolio-header reveal"
+                >
 
                     <div class="eyebrow">
                         Portfolio
@@ -2521,8 +2721,10 @@
 
 
                     <p class="section-description">
+
                         Alcuni dei progetti realizzati
                         da Vertex Web.
+
                     </p>
 
                 </div>
@@ -2543,15 +2745,18 @@
                                 src="https://barber-lc.vercel.app/"
                                 title="Barber LC"
                                 loading="lazy"
-                            >
-                            </iframe>
+                            ></iframe>
 
-                            <div class="preview-overlay"></div>
+
+                            <div
+                                class="preview-overlay"
+                            ></div>
 
                         </div>
 
 
                         <div class="project-info">
+
 
                             <div>
 
@@ -2586,6 +2791,7 @@
                                 ↗
                             </a>
 
+
                         </div>
 
                     </article>
@@ -2603,15 +2809,18 @@
                                 src="https://www.begproducts.it/"
                                 title="B&G Products"
                                 loading="lazy"
-                            >
-                            </iframe>
+                            ></iframe>
 
-                            <div class="preview-overlay"></div>
+
+                            <div
+                                class="preview-overlay"
+                            ></div>
 
                         </div>
 
 
                         <div class="project-info">
+
 
                             <div>
 
@@ -2627,9 +2836,10 @@
 
                                 <p>
 
-                                    Sito aziendale per
-                                    presentare attività,
-                                    prodotti e contatti.
+                                    Sito aziendale
+                                    per presentare
+                                    attività, prodotti
+                                    e contatti.
 
                                 </p>
 
@@ -2645,6 +2855,7 @@
                             >
                                 ↗
                             </a>
+
 
                         </div>
 
@@ -2663,15 +2874,18 @@
                                 src="https://tabaccheria-bar-sport-zhou.vercel.app/"
                                 title="Tabaccheria Bar Sport Zhou"
                                 loading="lazy"
-                            >
-                            </iframe>
+                            ></iframe>
 
-                            <div class="preview-overlay"></div>
+
+                            <div
+                                class="preview-overlay"
+                            ></div>
 
                         </div>
 
 
                         <div class="project-info">
+
 
                             <div>
 
@@ -2687,9 +2901,10 @@
 
                                 <p>
 
-                                    Presenza online dedicata
-                                    all'attività, con
-                                    informazioni e contatti.
+                                    Presenza online
+                                    dedicata all'attività,
+                                    con informazioni
+                                    e contatti.
 
                                 </p>
 
@@ -2706,6 +2921,7 @@
                                 ↗
                             </a>
 
+
                         </div>
 
                     </article>
@@ -2718,9 +2934,9 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              PROCESSO
-        ===================================================== -->
+        ================================================== -->
 
         <section
             class="process"
@@ -2731,6 +2947,7 @@
 
 
                 <div class="reveal">
+
 
                     <div class="eyebrow">
                         Il processo
@@ -2747,11 +2964,13 @@
 
                     <p class="section-description">
 
-                        Dal primo contatto alla pubblicazione
-                        del sito, seguiamo il progetto
+                        Dal primo contatto alla
+                        pubblicazione del sito,
+                        seguiamo il progetto
                         passo dopo passo.
 
                     </p>
+
 
                 </div>
 
@@ -2759,7 +2978,9 @@
                 <div class="process-grid">
 
 
-                    <article class="process-card reveal">
+                    <article
+                        class="process-card reveal"
+                    >
 
                         <span>
                             01
@@ -2773,16 +2994,18 @@
 
                         <p>
 
-                            Ci contatti tramite WhatsApp
-                            o email e ci spieghi
-                            di cosa hai bisogno.
+                            Ci contatti tramite
+                            WhatsApp o email e ci
+                            spieghi di cosa hai bisogno.
 
                         </p>
 
                     </article>
 
 
-                    <article class="process-card reveal">
+                    <article
+                        class="process-card reveal"
+                    >
 
                         <span>
                             02
@@ -2797,15 +3020,16 @@
                         <p>
 
                             Definiamo insieme struttura,
-                            funzionalità e stile
-                            del sito.
+                            funzionalità e stile del sito.
 
                         </p>
 
                     </article>
 
 
-                    <article class="process-card reveal">
+                    <article
+                        class="process-card reveal"
+                    >
 
                         <span>
                             03
@@ -2828,7 +3052,9 @@
                     </article>
 
 
-                    <article class="process-card reveal">
+                    <article
+                        class="process-card reveal"
+                    >
 
                         <span>
                             04
@@ -2854,7 +3080,9 @@
                 </div>
 
 
-                <div class="payment-box reveal">
+                <div
+                    class="payment-box reveal"
+                >
 
 
                     <div>
@@ -2866,27 +3094,35 @@
 
                         <p>
 
-                            Il pagamento del progetto può
-                            essere effettuato tramite
-                            uno dei seguenti metodi.
+                            Il pagamento del progetto
+                            può essere effettuato
+                            tramite uno dei seguenti
+                            metodi.
 
                         </p>
 
                     </div>
 
 
-                    <div class="payment-methods">
+                    <div
+                        class="payment-methods"
+                    >
 
-                        <span class="payment-method">
+                        <span
+                            class="payment-method"
+                        >
                             Bonifico istantaneo
                         </span>
 
 
-                        <span class="payment-method">
+                        <span
+                            class="payment-method"
+                        >
                             PayPal
                         </span>
 
                     </div>
+
 
                 </div>
 
@@ -2895,16 +3131,18 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              CONTATTI
-        ===================================================== -->
+        ================================================== -->
 
         <section
             class="contact"
             id="contatti"
         >
 
-            <div class="container contact-content reveal">
+            <div
+                class="container contact-content reveal"
+            >
 
 
                 <div class="eyebrow">
@@ -2920,7 +3158,9 @@
                 </h2>
 
 
-                <p class="contact-description">
+                <p
+                    class="contact-description"
+                >
 
                     Raccontaci cosa hai in mente
                     e scopriamo insieme come
@@ -2954,10 +3194,12 @@
 
                     </a>
 
+
                 </div>
 
 
                 <div class="contact-details">
+
 
                     <span>
                         WhatsApp:
@@ -2970,7 +3212,9 @@
                         r.davide2011@gmail.com
                     </span>
 
+
                 </div>
+
 
             </div>
 
@@ -2980,9 +3224,9 @@
     </main>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          FOOTER
-    ========================================================= -->
+    ===================================================== -->
 
     <footer>
 
@@ -2994,12 +3238,17 @@
 
                 <div class="footer-brand">
 
+
                     <a
                         href="#home"
                         class="brand"
                     >
 
-                        <span class="brand-logo"></span>
+                        <img
+                            src="logo.png"
+                            alt="Vertex Web"
+                            class="brand-logo"
+                        >
 
 
                         <span>
@@ -3016,10 +3265,13 @@
 
                     </p>
 
+
                 </div>
 
 
-                <div class="footer-column">
+                <div
+                    class="footer-column"
+                >
 
                     <h4>
                         Navigazione
@@ -3048,7 +3300,9 @@
                 </div>
 
 
-                <div class="footer-column">
+                <div
+                    class="footer-column"
+                >
 
                     <h4>
                         Contatti
@@ -3078,7 +3332,9 @@
                 </div>
 
 
-                <div class="footer-column">
+                <div
+                    class="footer-column"
+                >
 
                     <h4>
                         Pagamento
@@ -3104,8 +3360,10 @@
 
 
                 <span>
+
                     © 2026 Vertex Web —
                     Tutti i diritti riservati.
+
                 </span>
 
 
@@ -3133,25 +3391,28 @@
                         Cookie Policy
                     </a>
 
+
                 </div>
 
+
             </div>
+
 
         </div>
 
     </footer>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          JAVASCRIPT
-    ========================================================= -->
+    ===================================================== -->
 
     <script>
 
 
-        /* =====================================================
+        /* =================================================
            NAVBAR
-        ===================================================== */
+        ================================================= */
 
         const header =
             document.getElementById("header");
@@ -3161,13 +3422,19 @@
             "scroll",
             () => {
 
-                if (window.scrollY > 30) {
+                if (
+                    window.scrollY > 30
+                ) {
 
-                    header.classList.add("scrolled");
+                    header.classList.add(
+                        "scrolled"
+                    );
 
                 } else {
 
-                    header.classList.remove("scrolled");
+                    header.classList.remove(
+                        "scrolled"
+                    );
 
                 }
 
@@ -3175,22 +3442,30 @@
         );
 
 
-        /* =====================================================
+        /* =================================================
            MOBILE MENU
-        ===================================================== */
+        ================================================= */
 
         const menuToggle =
-            document.getElementById("menuToggle");
+            document.getElementById(
+                "menuToggle"
+            );
+
 
         const navLinks =
-            document.getElementById("navLinks");
+            document.getElementById(
+                "navLinks"
+            );
 
 
         menuToggle.addEventListener(
             "click",
             () => {
 
-                navLinks.classList.toggle("open");
+                navLinks.classList.toggle(
+                    "open"
+                );
+
 
                 document.body.classList.toggle(
                     "menu-open"
@@ -3198,14 +3473,18 @@
 
 
                 if (
-                    navLinks.classList.contains("open")
+                    navLinks.classList.contains(
+                        "open"
+                    )
                 ) {
 
-                    menuToggle.innerHTML = "✕";
+                    menuToggle.innerHTML =
+                        "✕";
 
                 } else {
 
-                    menuToggle.innerHTML = "☰";
+                    menuToggle.innerHTML =
+                        "☰";
 
                 }
 
@@ -3214,7 +3493,9 @@
 
 
         document
-            .querySelectorAll(".nav-links a")
+            .querySelectorAll(
+                ".nav-links a"
+            )
             .forEach(
                 link => {
 
@@ -3226,11 +3507,14 @@
                                 "open"
                             );
 
+
                             document.body.classList.remove(
                                 "menu-open"
                             );
 
-                            menuToggle.innerHTML = "☰";
+
+                            menuToggle.innerHTML =
+                                "☰";
 
                         }
                     );
@@ -3239,12 +3523,14 @@
             );
 
 
-        /* =====================================================
+        /* =================================================
            SCROLL REVEAL
-        ===================================================== */
+        ================================================= */
 
         const revealElements =
-            document.querySelectorAll(".reveal");
+            document.querySelectorAll(
+                ".reveal"
+            );
 
 
         const revealObserver =
@@ -3262,6 +3548,7 @@
                                 entry.target.classList.add(
                                     "visible"
                                 );
+
 
                                 observer.unobserve(
                                     entry.target
@@ -3292,9 +3579,9 @@
         );
 
 
-        /* =====================================================
+        /* =================================================
            SERVICE CARD DELAY
-        ===================================================== */
+        ================================================= */
 
         document
             .querySelectorAll(
@@ -3310,9 +3597,9 @@
             );
 
 
-        /* =====================================================
+        /* =================================================
            PROCESS CARD DELAY
-        ===================================================== */
+        ================================================= */
 
         document
             .querySelectorAll(
@@ -3328,23 +3615,27 @@
             );
 
 
-        /* =====================================================
-           ESC PER CHIUDERE IL MENU
-        ===================================================== */
+        /* =================================================
+           ESC
+        ================================================= */
 
         document.addEventListener(
             "keydown",
             event => {
 
-                if (event.key === "Escape") {
+                if (
+                    event.key === "Escape"
+                ) {
 
                     navLinks.classList.remove(
                         "open"
                     );
 
+
                     document.body.classList.remove(
                         "menu-open"
                     );
+
 
                     menuToggle.innerHTML =
                         "☰";

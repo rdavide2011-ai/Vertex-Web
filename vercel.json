@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/home",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/servizi",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/progetti",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/processo",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contatti",
+      "destination": "/index.html"
+    }
+  ]
+}
